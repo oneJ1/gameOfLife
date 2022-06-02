@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Game of Life</title>
+</head>
+<body>
+    <div id="screen">
+        <div id="header">
+            <p id="header-text">Conway's Game of Life by Jaewon Kim</p>
+            <button class="color-button" id="color-purple" onclick="changePurp()"></button>
+            <button class="color-button" id="color-red" onclick="changeRed()"></button>
+            <button class="color-button" id="color-orange" onclick="changeOrange()"></button>
+            <button class="color-button" id="color-green" onclick="changeGreen()"></button>
+            <button class="color-button" id="color-blue" onclick="changeBlue()"></button>
+            <button class="color-button" id="color-trigger" onclick="showColors()"></button>
+            <button id="information" onclick="infoPop()">i</button>
+        </div>
+        <div id="grid-container" onmousedown="mouseHold()" onmouseup="mouseLet()"></div>
+        <div id="wrapper2">
+            <div id="up-slide">
+                <div id="triangleUp"></div>
+            </div>
+            <div class="action-bar">
+                <button class="action-button" id="button-start" onclick="gameStart()">Start</button>
+                <button class="action-button" id="button-clear" onclick="gameClear()">Clear</button>
+                <button class="action-button" id="button-random" onclick="gameRandom()">Random</button>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div id="right-slide">
+                <div id="triangle"></div>
+            </div>
+            <div id="presets">
+                <p id="preset-head">Cool Presets
+                    <div id="preset-link">
+                        <a id="link-box" href="https://bitstorm.org/gameoflife/lexicon/" target="_blank">
+                            <div id="link-arrow"></div>
+                        </a>
+                    </div>
+                </p>
+                <div class="grid-container">
+                    <div class="grid-item" onclick="insertPreset(1)"><img src="./images/preset1.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(2)"><img src="./images/preset2.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(3)"><img src="./images/preset3.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(4)"><img src="./images/preset4.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(5)"><img src="./images/preset5.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(6)"><img src="./images/preset6.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(7)"><img src="./images/preset7.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(8)"><img src="./images/preset8.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(9)"><img src="./images/preset9.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(10)"><img src="./images/preset10.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(11)"><img src="./images/preset11.png" alt="" class="presetImg"></div>
+                    <div class="grid-item" onclick="insertPreset(12)"><img src="./images/preset12.png" alt="" class="presetImg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden" id="pop-up">
+        <h2>How does Conway's Game of Life work?</h2>
+        <br>
+        <p>Any live cell with two or three live neighbours survives.
+        Any dead cell with three live neighbours becomes a live cell.
+        All other live cells die in the next generation. Similarly, all other dead cells stay dead.</p>
+        <div id="close-button" onclick="infoClose()">+</div>
+    </div>
+</body>
+<script src="presets.js"></script>
+<script src="App.js"></script>
+</html>
